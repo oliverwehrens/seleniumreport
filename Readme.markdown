@@ -13,4 +13,4 @@ Just add the TestNg Listener and the report will be created. Every click, every 
 
 ## CI
 
-Check travis-ci.org
+Check travis-ci.org, http://travis-ci.org/#!/oliverwehrens/seleniumreport
