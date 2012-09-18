@@ -1,0 +1,13 @@
+<configuration>
+    <property name="logPattern" value="%d{ISO8601} [%thread] %-5level %logger{36} - %m%n"/>
+
+    <appender name="test-debug" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${logPattern}%ex{short}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="OFF">
+        <appender-ref ref="test-debug"/>
+    </root>
+</configuration>

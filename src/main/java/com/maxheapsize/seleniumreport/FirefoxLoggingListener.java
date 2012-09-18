@@ -52,7 +52,6 @@ class FirefoxLoggingListener extends AbstractWebDriverEventListener {
 
     }
 
-
     @Override
     public void onException(Throwable throwable, WebDriver webDriver) {
         File browserScreenShot = makeScreenshot(webDriver);

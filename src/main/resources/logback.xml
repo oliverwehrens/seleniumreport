@@ -1,0 +1,37 @@
+<configuration scan="true">
+    <property name="logPattern" value="%d{ISO8601} [%thread] %-5level %logger{36} - %m%n"/>
+    <property name="logFilePrefix" value="selenium-report"/>
+
+    <appender name="all-file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logFilePrefix}-all.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logFilePrefix}-all.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${logPattern}%ex{short}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="error-file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logFilePrefix}-error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logFilePrefix}-error.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <pattern>${logPattern}%rEx</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.maxheapsize.seleniumreport" level="INFO"/>
+
+    <root level="OFF">
+        <appender-ref ref="error-file"/>
+        <appender-ref ref="all-file"/>
+    </root>
+
+</configuration>
