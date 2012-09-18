@@ -47,7 +47,7 @@ class FirefoxLoggingListener extends AbstractWebDriverEventListener {
             }
             seleniumReport.addEntry(entry);
         } else {
-            log.info("No selenium report available. Maybe missing " + SeleniumReportTestNGListener.class.getCanonicalName() + " Listener not enabled ?");
+            log.info("No selenium report available. Maybe missing %s Listener not enabled ?", SeleniumReportTestNGListener.class.getCanonicalName());
         }
 
     }

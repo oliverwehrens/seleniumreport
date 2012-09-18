@@ -63,7 +63,7 @@ public class SeleniumReportTestNGListener extends TestListenerAdapter {
         try {
             seleniumTestNgHtmlConverter.writeReportToDirectory(seleniumReports, seleniumReportDir);
         } catch (IOException e) {
-            log.error("Could not write selenium reports to " + seleniumReportDir + ".");
+            log.error("Could not write selenium reports to '%s'.", seleniumReportDir);
         }
     }
 
