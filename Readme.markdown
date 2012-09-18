@@ -11,3 +11,6 @@ Supports TestNG.
 Just add the TestNg Listener and the report will be created. Every click, every change of value will be documented with optional screenshots.
 
 
+## CI
+
+Check travis-ci.org
